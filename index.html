@@ -2977,11 +2977,10 @@
 			session.stunServers = [{ urls: ["stun:stun.l.google.com:19302", "stun:stun.cloudflare.com:3478"]}]; // google + cloudflare stun servers. default
 			
 			
-			///////////////  ------  Custom basic TURN SETUP SECTION STARTS Here --------
-			// session.configuration = {         // uncomment to disable the default usage of the vdo.ninja turn servers.
-			//	iceServers: session.stunServers,
-			//	sdpSemantics: session.sdpSemantics
-			// };
+			session.configuration = {         // uncomment to disable the default usage of the vdo.ninja turn servers.
+			iceServers: session.stunServers,
+			sdpSemantics: session.sdpSemantics
+			};
 			// var turn = {}; // Just an example entry for a basic TURN server 
 			// turn.username = "steve";
 			// turn.credential = "justtesting";
