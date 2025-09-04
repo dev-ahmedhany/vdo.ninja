@@ -48,6 +48,8 @@
 		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon" />
 		<link id="favicon1" rel="icon" type="image/png" sizes="32x32" href="./media/favicon-32x32.png" />
 		<link id="favicon2" rel="icon" type="image/png" sizes="16x16" href="./media/favicon-16x16.png" />
+		<link rel="apple-touch-icon" href="./media/logo_cropped_512.png" />
+		<link rel="manifest" href="./manifest.json" />
 		<link id="favicon3" rel="icon" href="./media/favicon.ico" />
 		<link id="thumbnailUrl" itemprop="thumbnailUrl" href="./media/vdoNinja_logo_full.png" />
 		<link rel="alternate" type="text/markdown" href="/rawdoc.md" title="Developer and User Documentation">
@@ -3125,6 +3127,20 @@
 
 		<script type="text/javascript" crossorigin="anonymous" id="lib-js" src="./lib.js?ver=1351"></script>
 		<script type="text/javascript" crossorigin="anonymous" id="main-js" src="./main.js?ver=995"></script>
+		
+		<script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('./serviceWorker.js')
+						.then(registration => {
+							console.log('ServiceWorker registration successful');
+						})
+						.catch(err => {
+							console.log('ServiceWorker registration failed: ', err);
+						});
+				});
+			}
+		</script>
 		
 	</body>
 </html>
